@@ -2,8 +2,6 @@
 
 namespace App\Broadcasting;
 
-use App\Models\User;
-
 class ChatChannel
 {
     /**
@@ -22,7 +20,7 @@ class ChatChannel
      * @param  \App\Models\User  $user
      * @return array|bool
      */
-    public function join(User $user)
+    public function join(User $user): bool
     {
         return auth()->check();
     }
