@@ -2,10 +2,9 @@
 
 namespace App\Events;
 
+use App\Models\{User, Message};
 use Illuminate\Broadcasting\Channel;
-use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\{InteractsWithSockets, PresenceChannel, PrivateChannel};
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -19,9 +18,8 @@ class MessageSent implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public User $user, public Message $message)
     {
-        //
     }
 
     /**
